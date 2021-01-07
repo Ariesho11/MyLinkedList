@@ -20,12 +20,26 @@ public class MyLinkedList{
      start.setData(value);
      end.setData(value);
    }
-   else end.setData(value);
+   else{
+     end.setPrev(end);
+     end.setData(value);
+   }
    return true;
  }
 
  public void add(int index, String value){
-
+   if(size == 0){
+     start.setData(value);
+     end.setData(value);
+   }
+   Node current = start;
+   for(int i = 0; i <= index ;i++){
+     if ((i ==index)&&(current != null)){
+       current.setNext(current);
+       current.setData(value);
+     }
+     current = current.getNext();
+   }
  }
 
  public String get(int index){

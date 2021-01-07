@@ -8,14 +8,15 @@ public class MyLinkedList{
  public int size(){
    Node current = start;
    int count = 0;
-   while (current !- null){
+   while (current != null){
      count++;
-     current = current.next()
+     current = current.getNext();
    }
+   return count;
  }
 
  public boolean add(String value){
-
+   return true;
  }
 
  public void add(int index, String value){
@@ -23,15 +24,15 @@ public class MyLinkedList{
  }
 
  public String get(int index){
-
+   return "";
  }
 
  public String set(int index, String value){
-
+   return "";
  }
 
  public String toString(){
-
+   return "";
  }
  //Any helper method that returns a Node object MUST BE PRIVATE!
 }

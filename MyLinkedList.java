@@ -44,7 +44,6 @@ public class MyLinkedList{
 
  public String get(int index){
    Node current = start;
-   int count = 0;
    for(int i = 0; i <= index ;i++){
      if ((i == index)&&(current != null)){
        return "" + current;
@@ -55,12 +54,41 @@ public class MyLinkedList{
  }
 
  public String set(int index, String value){
-   return "";
- }
+   Node current = start;
+   int count = 0;
+   for(int i = 0; i <= index ;i++){
+     if ((i == index)&&(current != null)){
+       current.setNext(current);
+       current.setData(value);
+     }
+     current = current.getNext();
+    }
+   return "" + current;
+  }
 
  public String toString(){
-   return "";
+   String ns = "[";
+   Node current = start;
+   while(current != null){
+     ns = ns + current.getData() + ", ";
+     if (current == end) ns = ns + "]";
+     current = current.getNext();
+   }
+   return ns;
  }
  //Any helper method that returns a Node object MUST BE PRIVATE!
  //Don't  loop for extend; extend should be constant time; if a extends b, rip out the guts of b and give it to a
+
+ public void remove(String value){
+
+ }
+
+ public void remove(int index, String value){
+
+ }
+
+ public void extend(MyLinkedList other){
+
+ }
+
 }

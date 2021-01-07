@@ -17,15 +17,15 @@ public class MyLinkedList{
 
  public boolean add(String value){
    if(size == 0){
-     start = value;
-     end = value;
+     start.setData(value);
+     end.setData(value);
    }
-   else end = value;
+   else end.setData(value);
    return true;
  }
 
  public void add(int index, String value){
-   
+
  }
 
  public String get(int index){

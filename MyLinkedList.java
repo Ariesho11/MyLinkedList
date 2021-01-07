@@ -16,11 +16,16 @@ public class MyLinkedList{
  }
 
  public boolean add(String value){
+   if(size == 0){
+     start = value;
+     end = value;
+   }
+   else end = value;
    return true;
  }
 
  public void add(int index, String value){
-
+   
  }
 
  public String get(int index){

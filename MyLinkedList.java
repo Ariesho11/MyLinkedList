@@ -43,7 +43,15 @@ public class MyLinkedList{
  }
 
  public String get(int index){
-   return "";
+   Node current = start;
+   int count = 0;
+   for(int i = 0; i <= index ;i++){
+     if ((i == index)&&(current != null)){
+       return "" + current;
+     }
+     current = current.getNext();
+    }
+   return "" + current;
  }
 
  public String set(int index, String value){
@@ -54,4 +62,5 @@ public class MyLinkedList{
    return "";
  }
  //Any helper method that returns a Node object MUST BE PRIVATE!
+ //Don't  loop for extend; extend should be constant time; if a extends b, rip out the guts of b and give it to a
 }

@@ -3,6 +3,8 @@ public class MyLinkedList{
  private Node start,end;
  public MyLinkedList(){
    size = 0;
+   start.setData(null);
+   end.setData(null);
  }
 
  public int size(){
@@ -16,13 +18,18 @@ public class MyLinkedList{
  }
 
  public boolean add(String value){
-   if(size == 0){
+   Node new_node = new Node(value);
+   new_node.setNext(null);
+   if(start == null){
      start.setData(value);
      end.setData(value);
    }
    else{
-     end.setPrev(end);
-     end.setData(value);
+     Node current = start;
+     while (current != null){
+       current = current.getNext();
+     }
+     current.setNext(new_node);
    }
    return true;
  }
